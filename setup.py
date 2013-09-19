@@ -1,21 +1,26 @@
 # coding: utf-8
 
-from __future__ import with_statement
 from setuptools import setup
 
 
 def get_version(fname='nose_ignoredoc.py'):
-    with open(fname) as f:
+    f = open(fname)
+    try:
         for line in f:
             if line.startswith('__version__'):
                 return eval(line.split('=')[-1])
+    finally:
+        f.close()
 
 
 def get_long_description():
     descr = []
     for fname in ('README.rst',):
-        with open(fname) as f:
+        f = open(fname)
+        try:
             descr.append(f.read())
+        finally:
+            f.close()
     return '\n\n'.join(descr)
 
 
