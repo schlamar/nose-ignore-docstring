@@ -33,6 +33,11 @@ Changes
 -------
 
 
+0.2 - 2013-09-19
+````````````````
+* Added support for Python 2.3
+
+
 0.1 - 2013-04-17
 ````````````````
 * First release
